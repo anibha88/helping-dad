@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Report</title>
+    <title>My Report</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,5 +10,9 @@
 
   <body>
     <%= yield %>
+    
   </body>
+  <footer>
+  	<%= link_to 'Home page', root_path %>
+  </footer>
 </html>

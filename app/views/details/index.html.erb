@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Date</th>
       <th>Shop name</th>
       <th>Cust name</th>
       <th>Phone</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @details.each do |detail| %>
       <tr>
+        <td><%= detail.date.strftime("%d/%m/%Y") if !detail.date.nil? %></td>
         <td><%= detail.shop_name %></td>
         <td><%= detail.cust_name %></td>
         <td><%= detail.phone %></td>
