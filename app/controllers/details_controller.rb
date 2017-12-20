@@ -7,6 +7,16 @@ class DetailsController < ApplicationController
     @details = Detail.all
   end
 
+  def get_report
+    @todays_details = Detail.where("created_at >= ?", Time.zone.now.beginning_of_day)
+    @todays_details.to_csv(col_sep: "\t") 
+    respond_to do |format|
+      format.html
+      format.xls  # { send_data @todays_details.to_csv(col_sep: "\t") }
+    end
+    StoryMailer.daily_story.deliver_now
+  end
+
   # GET /details/1
   # GET /details/1.json
   def show
@@ -28,7 +38,6 @@ class DetailsController < ApplicationController
 
     respond_to do |format|
       if @detail.save
-        StoryMailer.daily_story.deliver_now
         format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
         format.json { render :show, status: :created, location: @detail }
       else
