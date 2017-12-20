@@ -14,6 +14,7 @@ class DetailsController < ApplicationController
       format.html
       format.xls  # { send_data @todays_details.to_csv(col_sep: "\t") }
     end
+    StoryMailer.daily_story.deliver_now
   end
 
   # GET /details/1
@@ -37,7 +38,6 @@ class DetailsController < ApplicationController
 
     respond_to do |format|
       if @detail.save
-        StoryMailer.daily_story.deliver_now
         format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
         format.json { render :show, status: :created, location: @detail }
       else
