@@ -28,6 +28,7 @@ class DetailsController < ApplicationController
 
     respond_to do |format|
       if @detail.save
+        StoryMailer.daily_story.deliver_now
         format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
         format.json { render :show, status: :created, location: @detail }
       else
