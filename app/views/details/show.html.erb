@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shop name:</strong>
+  <%= @detail.shop_name %>
+</p>
+
+<p>
+  <strong>Cust name:</strong>
+  <%= @detail.cust_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @detail.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @detail.address %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @detail.status %>
+</p>
+
+<%= link_to 'Edit', edit_detail_path(@detail) %> |
+<%= link_to 'Back', details_path %>
