@@ -7,6 +7,15 @@ class DetailsController < ApplicationController
     @details = Detail.all
   end
 
+  def get_report
+    @todays_details = Detail.where("created_at >= ?", Time.zone.now.beginning_of_day)
+    @todays_details.to_csv(col_sep: "\t") 
+    respond_to do |format|
+      format.html
+      format.xls  # { send_data @todays_details.to_csv(col_sep: "\t") }
+    end
+  end
+
   # GET /details/1
   # GET /details/1.json
   def show
