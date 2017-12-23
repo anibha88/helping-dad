@@ -13,7 +13,11 @@ class Detail < ApplicationRecord
 	def self.to_csv(options = {})
 		CSV.open("#{Rails.root}/lib/attachments/file.csv", "wb") do |csv|
 			# csv << column_names
-			csv << ["Date", "Details", "Status"]
+			csv << "SREE LPG (P) LTD"
+			csv << "Employee code/Name :  Ramesh HR"
+			csv << "1. Channel Partner Enquiry"
+			csv << "Date #{Time.now.strftime("%d/%m/%Y")}"
+			csv << ["Sl.No.", "Details", "Status"]
 			
 		    all.each do |product|
 		    	
