@@ -7,11 +7,11 @@ class StoryMailer < ApplicationMailer
   #
   def daily_story
     @greeting = "Hi"
-    email_attachment = "#{Rails.root}/lib/attachments/file.csv"
+    email_attachment = "#{Rails.root}/lib/attachments/ramesh.pdf"
     
     # mail to: "nithin@cognitiveclouds.com", subject: "Today's report! Date: #{Time.now.strftime("%d/%m/%Y")}"
     mail to: "nithin@cognitiveclouds.com", subject: "Today's report!"
     #mail to: "sreelpg_response@yahoo.co.in", subject: "Today's report!"
-    mail.attachments['file.csv'] = File.read(email_attachment)
+    mail.attachments['ramesh.pdf'] = File.read(email_attachment)
   end
 end
