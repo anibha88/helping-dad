@@ -8,7 +8,7 @@ class OrderPdf < Prawn::Document
 	    # text "Employee code/Name :  Ramesh HR", align: :left, size: 15
 	    # move_down 5
 	    # text "Date: #{Time.now.strftime("%d/%m/%Y")}", align: :right, size: 15
-	    # gen_pdf
+	    gen_pdf
 	    # line_items
 	end
 
@@ -20,7 +20,7 @@ class OrderPdf < Prawn::Document
 		    text "Employee code/Name :  Ramesh HR", align: :left, size: 15
 		    move_down 5
 		    text "Date: #{Time.now.strftime("%d/%m/%Y")}", align: :right, size: 15
-		    gen_pdf
+		    # gen_pdf
 		    line_items
 	  	end
 	end
