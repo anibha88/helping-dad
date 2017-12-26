@@ -4,7 +4,7 @@ class DetailsController < ApplicationController
   # GET /details
   # GET /details.json
   def index
-    @details = Detail.all
+    @details = Detail.all.order('created_at DESC')
   end
 
   def get_report
