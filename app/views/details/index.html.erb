@@ -35,4 +35,4 @@
 <br>
 
 <%= link_to 'New Detail', new_detail_path %>
-<%= link_to 'Generate Report', report_path(format: "pdf") %>
+<%= link_to 'Generate Report', report_path(format: "pdf"), data: { no_turbolink: true } %>

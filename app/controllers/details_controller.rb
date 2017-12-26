@@ -13,7 +13,8 @@ class DetailsController < ApplicationController
       format.html
       format.pdf do
         pdf = OrderPdf.new(@todays_details, view_context)
-        send_data pdf.render,type: "application/pdf",disposition: "inline"
+        pdf.render_file "#{Rails.root}/lib/attachments/ramesh_daily_report.pdf"
+        send_data pdf.render, filename: "#{Rails.root}/lib/attachments/ramesh_daily_report.pdf", type: "application/pdf",disposition: "inline"
       end
     end
     StoryMailer.daily_story.deliver_now
