@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Report</title>
+    <title>My Daily Reporter</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,10 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
-    
+    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/messages' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
-  <footer>
-  	<%= link_to 'Home page', root_path %>
-  </footer>
 </html>

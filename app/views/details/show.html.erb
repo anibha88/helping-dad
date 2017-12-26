@@ -1,35 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/page_title', title: "Date: #{@detail.date.strftime("%d/%m/%Y") if !@detail.date.nil?}" %>
 
-<p>
-  <strong>Date:</strong>
-  <%= @detail.date.strftime("%d/%m/%Y") if !@detail.date.nil? %>
-</p>
+<div class="well col-md-8 col-md-offset-2">
+  <h4 class="center description">
+    <strong> Shop Name: <%= @detail.shop_name %> </strong>
+  </h4>
+  <hr />
 
+  <div class="pull-left"> 
+    <p class="center">
+      <em>Customer Name:</em>
+      <%= @detail.cust_name %>
+    </p>
 
-<p>
-  <strong>Shop name:</strong>
-  <%= @detail.shop_name %>
-</p>
+    <p class="center">
+      <em>Phone:</em>
+      <%= @detail.phone %>
+    </p>
 
-<p>
-  <strong>Cust name:</strong>
-  <%= @detail.cust_name %>
-</p>
+    <p class="center">
+      <em>Address:</em>
+      <%= @detail.address %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @detail.phone %>
-</p>
+    <p class="center">
+      <em>Status:</em>
+      <%= @detail.status %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @detail.address %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @detail.status %>
-</p>
-
-<%= link_to 'Edit', edit_detail_path(@detail) %> |
-<%= link_to 'Back', details_path %>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <%= link_to 'Edit', edit_detail_path(@detail), class: "btn btn-primary btn-lg btn-xlarge" %> |
+          <%= link_to 'Back', details_path, class: "btn btn-primary btn-lg btn-xlarge" %>
+        </div>
+    </div>
+  </div>
+</div>

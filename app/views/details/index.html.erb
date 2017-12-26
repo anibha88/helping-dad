@@ -1,3 +1,7 @@
+<div align="center">
+  <%= will_paginate %>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Details</h1>
@@ -22,8 +26,10 @@
         <td><%= detail.shop_name %></td>
         <td><%= detail.cust_name %></td>
         <td><%= detail.phone %></td>
-        <td><%= detail.address %></td>
-        <td><%= detail.status %></td>
+        <!-- <td><%#= detail.address %></td> -->
+        <td><%= truncate(detail.address, length: 150) %></td>
+        <!-- <td><%#= detail.status %></td> -->
+        <td><%= truncate(detail.status, length: 150) %></td>
         <td><%= link_to 'Show', detail %></td>
         <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
         <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,7 +38,11 @@
   </tbody>
 </table>
 
+<div align="center">
+  <%= will_paginate %>
+</div>  
+
 <br>
 
-<%= link_to 'New Detail', new_detail_path %>
-<%= link_to 'Generate Report', report_path(format: "pdf"), data: { no_turbolink: true, confirm: "Are you sure you want to generate today's report?" } %>
+<%#= link_to 'New Detail', new_detail_path %>
+<%#= link_to 'Generate Report', report_path(format: "pdf"), data: { no_turbolink: true, confirm: "Are you sure you want to generate today's report?" } %>

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <%= link_to "My Daily Reporter", root_path, class: "navbar-brand", id: "logo" %>
+    </div>
+    
+    <div>
+      
+    </div>
+        
+        <%= link_to "New Detail", new_detail_path, class: "btn btn-default" %> 
+        <%= link_to "All Details", root_path, class: "btn btn-default" %> 
+        <%= link_to 'Generate Today\'s Report', report_path(format: "pdf"), data: { no_turbolink: true, confirm: "Are you sure you want to generate today's report?" }, class: "btn btn-default gen" %>
+  </div><!-- /.container-fluid -->
+</nav>
