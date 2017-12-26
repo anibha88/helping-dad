@@ -4,7 +4,8 @@ class DetailsController < ApplicationController
   # GET /details
   # GET /details.json
   def index
-    @details = Detail.all.order('created_at DESC')
+    #@details = Detail.all.order('created_at DESC')
+    @details = Detail.paginate(page: params[:page], per_page: 5)
   end
 
   def get_report
