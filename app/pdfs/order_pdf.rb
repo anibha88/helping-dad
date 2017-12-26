@@ -6,8 +6,10 @@ class OrderPdf < Prawn::Document
 	    text "SREE LPG (P) LTD.,", align: :center, size: 20
 	    move_down 10
 	    text "Employee code/Name :  Ramesh HR", align: :left, size: 15
-	    move_down 5
+	    move_down 2
 	    text "Date: #{Time.now.strftime("%d/%m/%Y")}", align: :right, size: 15
+	    move_down 4
+	    text "1. Channel Partner Enquiry", align: :left, size: 15
 	    line_items
 	end
 
