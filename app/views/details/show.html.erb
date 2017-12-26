@@ -27,11 +27,13 @@
       <%= @detail.status %>
     </p>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-          <%= link_to 'Edit', edit_detail_path(@detail), class: "btn btn-primary btn-lg btn-xlarge" %> |
-          <%= link_to 'Back', details_path, class: "btn btn-primary btn-lg btn-xlarge" %>
-        </div>
-    </div>
+    
+        
+          <%= link_to 'Edit', edit_detail_path(@detail), class: "btn btn-primary" %> 
+        
+        
+          <%= link_to 'Back', details_path, class: "btn btn-primary" %>
+      
+    
   </div>
 </div>
