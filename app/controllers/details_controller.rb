@@ -42,29 +42,22 @@ class DetailsController < ApplicationController
   # POST /details.json
   def create
     @detail = Detail.new(detail_params)
-
-    respond_to do |format|
       if @detail.save
-        format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
-        format.json { render :show, status: :created, location: @detail }
+        flash[:success] = "Detail was successfully created!"
+        redirect_to @detail
       else
-        format.html { render :new }
-        format.json { render json: @detail.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
   end
 
   # PATCH/PUT /details/1
   # PATCH/PUT /details/1.json
   def update
-    respond_to do |format|
-      if @detail.update(detail_params)
-        format.html { redirect_to @detail, notice: 'Detail was successfully updated.' }
-        format.json { render :show, status: :ok, location: @detail }
-      else
-        format.html { render :edit }
-        format.json { render json: @detail.errors, status: :unprocessable_entity }
-      end
+    if @detail.update(detail_params)
+      flash[:success] = "Detail was successfully updated!"
+      redirect_to detail_path(@detail)
+    else
+      render 'edit'
     end
   end
 
@@ -72,10 +65,8 @@ class DetailsController < ApplicationController
   # DELETE /details/1.json
   def destroy
     @detail.destroy
-    respond_to do |format|
-      format.html { redirect_to details_url, notice: 'Detail was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Detail was successfully destroyed!"
+    redirect_to details_path
   end
 
   private
