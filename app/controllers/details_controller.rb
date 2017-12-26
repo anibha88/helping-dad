@@ -9,6 +9,10 @@ class DetailsController < ApplicationController
 
   def get_report
     @todays_details = Detail.where("created_at >= ?", Time.zone.now.beginning_of_day)
+      if @todays_details.blank?
+        flash[:alert] = "You have not made today's entry. Please make an entry now!"
+        redirect_to new_detail_path and return
+      end
     respond_to do |format|
       format.html
       format.pdf do
