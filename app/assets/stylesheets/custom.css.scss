@@ -1,4 +1,4 @@
-$navbar-default-bg: #432c1e;
+$navbar-default-bg: #a7c6dc;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -7,8 +7,15 @@ $navbar-default-bg: #432c1e;
   text-align: center;
 }
 
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {float:none;}
+
 #logo {
-  float: left;
   font-size: 1.7em;
   color: #c65204;
   text-transform: uppercase;
@@ -21,30 +28,9 @@ $navbar-default-bg: #432c1e;
   text-decoration: none;
 }  
 
-.jumbotron {
-  background-image: asset-url('recipe_seeds.png');
-  background-size: cover;
-  height: 300px;
-}
-
-.jumbotron h1 {
-  color:  #B7AC9A;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-.jumbotron h2 {
-  color:  #B7AC9A;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
 
 .btn-xlarge {
-    background-color: #652D0E;
+    background-color: #000080;
 }
 
 .btn-xlarge:hover {
@@ -86,6 +72,8 @@ $navbar-default-bg: #432c1e;
   font-size: 1.25em;
 }
 
-.input_checkbox input {
-  width: auto!important;
+.gen {
+   margin-left: 600px;
 }
+
+
