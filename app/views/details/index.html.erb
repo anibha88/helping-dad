@@ -22,8 +22,10 @@
         <td><%= detail.shop_name %></td>
         <td><%= detail.cust_name %></td>
         <td><%= detail.phone %></td>
-        <td><%= detail.address %></td>
-        <td><%= detail.status %></td>
+        <!-- <td><%#= detail.address %></td> -->
+        <td><%= truncate(detail.address, length: 150) %></td>
+        <!-- <td><%#= detail.status %></td> -->
+        <td><%= truncate(detail.status, length: 150) %></td>
         <td><%= link_to 'Show', detail %></td>
         <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
         <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
