@@ -15,7 +15,7 @@ class OrderPdf < Prawn::Document
 
 	
 	def details(detail)
-	  	"Shop name: #{detail.shop_name}, Customer/Shop owner name: #{detail.cust_name}, Contact/Phone Number: #{detail.phone}, Address: #{detail.address}"
+	  	"Date: #{detail.date.strftime("%d/%m/%Y")} Shop name: #{detail.shop_name}, Customer/Shop owner name: #{detail.cust_name}, Contact/Phone Number: #{detail.phone}, Address: #{detail.address}"
 	end
 	  
 
